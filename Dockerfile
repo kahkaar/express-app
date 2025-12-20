@@ -1,7 +1,11 @@
-FROM node:16
+FROM node:lts-alpine
+
+WORKDIR /usr/src/app
+
+EXPOSE 8080
 
 COPY . .
 
 RUN npm install
 
-CMD node index.js
+CMD ["node", "index.js"]
